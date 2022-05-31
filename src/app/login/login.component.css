@@ -1,0 +1,24 @@
+
+
+div mat-card{
+ margin-top: 7%;
+  background: linear-gradient(rgba(248, 100, 14, 0.897),rgba(240, 234, 234, 0.788),rgba(35, 153, 35, 0.795));
+}
+
+mat-card mat-toolbar{
+background: rgba(60, 47, 240, 0.836);
+border-radius: 5px ;
+box-shadow: 2px 4px 5px rgba(129, 123, 206, 0.548);
+}
+.main-div{
+  padding: 0;
+}
+
+.login-form{
+  padding: 10%;
+}
+
+.btn{
+
+  margin: 5px;
+}

@@ -1,0 +1,73 @@
+
+  <form [formGroup]="service.form" class="normal-form">
+  <mat-grid-list col="'2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+
+        <mat-form-field>
+          <input formControlName="fname" matInput placeholder="First name*">
+          <mat-error>First name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="lname" matInput placeholder="Last name*">
+          <mat-error>Last name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="monum" matInput placeholder="Mobile number*">
+          <mat-error *ngIf="service.form.controls['monum'].errors?.['required']">Mobile number is required</mat-error>
+          <mat-error *ngIf="service.form.controls['monum'].errors?.['minLength']">You missed few numbers</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="xyz@email.com*">
+          <mat-error>Email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="pass" matInput placeholder="Password*">
+          <mat-error>Password is needed for your data security</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="address" matInput placeholder="Your home*">
+          <mat-error>Address is required</mat-error>
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="controles-container">
+
+        <div class="add-bottom-padding">
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+        <mat-radio-button value="3">Other</mat-radio-button>
+      </mat-radio-group>
+      </div>
+
+      <mat-form-field>
+        <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="Date of Birth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="add-bottom-padding">
+      <mat-checkbox formControlName="agree">I agree</mat-checkbox>
+      </div>
+
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+        <button mat-raised-button color="primary" type="">Edit</button>
+        <button mat-raised-button color="primary">Delete</button>
+      </div>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+
+
